@@ -58,7 +58,7 @@ const Navbar = () => {
             </ul>
             <div className="hidden md:flex items-center">
               <button
-                className="border border-pink-600 px-10 py-1 rounded-full text-base"
+                className="border border-pink-600 px-10 py-1 rounded-full text-base text-cyan-600 font-bold"
                 onClick={() => scrollToSection("contact-me")}
               >
                 Get Me
