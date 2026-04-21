@@ -1,31 +1,30 @@
-export const ScrolReveal = (options = {}) => {
-  const [isVisible, setIsVisible] = useState(false);
+import { useScrollReveal } from "../Hooks/useScrollReveal";
 
-  const { threshold = 0.1, rootMargin = "0px" } = options;
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(element);
-        }
-      },
-      {
-        threshold,
-        rootMargin,
-      },
-    );
-    observer.observe(element);
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, [threshold, rootMargin]);
-  return { ref, isVisible };
+export const ScrolReveal = (
+  animation = "fadeUp",
+  delay = 0,
+  duration = 700,
+  children,
+) => {
+  const [ref, isVisible] = useScrollReveal({ threshold: 0.1 });
+  const animationClasses = {
+    fadeUp: "opacity-0 translate-y-10",
+    fadeIn: "opacity-0",
+    slideLeft: "opacity-0 -translate-x-13",
+    slideRight: "opacity-0 translate-x-[13]",
+    scaleIn: "opacity-0 scale-90",
+  };
+  const visibleClasses = "opacity-100 translate-y-0 translate-x-0 scale-100";
+  return (
+    <div
+      className={`transition-all ease-out ${isVisible ? visibleClasses : animationClasses(animation)}`}
+      style={{
+        transitionDelay: `${delay}ms`,
+        transitionDuration: `${duration}ms`,
+      }}
+      ref={ref}
+    >
+      {children}
+    </div>
+  );
 };

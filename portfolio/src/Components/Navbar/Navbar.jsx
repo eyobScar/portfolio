@@ -43,7 +43,6 @@ const Navbar = () => {
     }
   };
 
-  
   const handleNavClick = (sectionId) => {
     scrollToSection(sectionId);
     // setIsOpenMenu(false);
