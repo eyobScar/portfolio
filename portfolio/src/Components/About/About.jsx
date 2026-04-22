@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 const About = () => {
   const [isCollapssed, setIsCollapssed] = useState(true);
   return (
-    <div className="max-w-[1300px] mx-auto px-5">
+    <section className="max-w-[1300px] mx-auto px-5" id="about">
       <div className="flex flex-col gap-6 max-w-[900px] mx-auto">
         <div className="w-fit mx-auto">
           <h2 className=" text-2xl">About Me</h2>
@@ -44,7 +44,7 @@ const About = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -11,7 +11,7 @@ import { SiTailwindcss } from "react-icons/si";
 
 const TechStack = () => {
   return (
-    <div className="my-20 max-w-[1300px] mx-auto px-5 w-full ">
+    <div className="my-20 max-w-[1100px] mx-auto px-5 w-full " id="tech-stack">
       <div className="w-fit mx-auto text-center">
         <h2 className="text-2xl">My Tech Stacks</h2>
         <hr className="border-none h-1 w-25 bg-primary mx-auto my-2" />

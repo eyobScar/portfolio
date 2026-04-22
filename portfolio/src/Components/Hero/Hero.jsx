@@ -9,8 +9,10 @@ import React from "react";
 const Hero = () => {
   const words = ["Frontend", "Backend", "Fullstack"];
   return (
-    <section className="min-h-[700px] pt-30 px-5 max-w-[1300px] mx-auto flex items-center">
-      {/* //container */}
+    <section
+      className="min-h-[700px] pt-30 px-5 max-w-[1300px] mx-auto flex items-center"
+      id="home"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-2">
         <div className="flex flex-col gap-5 items-start justify-center">
           <FadeIn>
