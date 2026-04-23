@@ -11,7 +11,7 @@ import { scrollToSection } from "../../Task/scrollToSection";
 
 const Footer = () => {
   return (
-    <div className="px-5 my-20">
+    <section className="my-20 ">
       <div className="flex flex-col gap-5 md:grid grid-cols-[2fr_1fr_1fr] ">
         <div className="flex flex-col gap-4">
           <div className="">
@@ -35,7 +35,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div group>
+        <div>
           <h3 className="font-bold text-xl">Quick Links</h3>
           <ul className="list-disc pl-5 marker:text-primary/50 group">
             {navLinks.map((link) => (
@@ -82,7 +82,7 @@ const Footer = () => {
           <span className="opacity-40">using React & Tailwindcss</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

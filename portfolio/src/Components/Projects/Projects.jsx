@@ -5,7 +5,7 @@ import image from "../../assets/food_delivery.png";
 
 const Projects = () => {
   return (
-    <section className="max-w-[1300px] mx-auto px-5 " id="projects">
+    <section className=" " id="projects">
       <div className="text-center">
         <h3 className="text-2xl">My Projects</h3>
         <hr className="w-20 mx-auto text-primary border-none h-1 bg-primary my-2" />
@@ -22,6 +22,7 @@ const Projects = () => {
               projectTechs={project.techs}
               projectLiveURL={project.liveURL}
               projectGithubURL={project.githubURL}
+              projectCategory={project.category}
             />
           ))}
         </div>

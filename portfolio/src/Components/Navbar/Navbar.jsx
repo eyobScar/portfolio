@@ -24,12 +24,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div >
+    <section className="">
       <nav
-        className={`fixed left-0 top-0 right-0 w-full z-1000 py-4 transition-all duration-300 ${isScrolled ? "bg-black/30 backdrop-blur-lg" : "bg-transparent"}`}
+        className={`fixed left-0 top-0 right-0 w-full z-1000 py-4 transition-all duration-300 ${isScrolled ? "dark:bg-black/30 bg-white backdrop-blur-lg" : "bg-transparent"}`}
         style={{ transform: "translate3d(0,0,0)" }}
       >
-        <div className="max-w-[1300px] mx-auto px-5">
+        <div className="px-5 max-w-[1300px] mx-auto">
           <div className="flex items-center justify-between">
             <div className="flex gap-2 items-center text-pink-600" style={{}}>
               <Layers />
@@ -42,10 +42,10 @@ const Navbar = () => {
             </div>
             <ul className="hidden md:flex gap-3">
               {navLinks.map((link) => (
-                <li key={link._id} className="group">
+                <li key={link._id} className="group ">
                   <button
                     onClick={() => handleNavClick(link.id)}
-                    className={`bg-linear-to-r from-primary to-secondary bg-clip-text relative text-base font-medium group-hover:text-pink-800 ${activeSection === link.id ? " text-transparent" : "text-white"}`}
+                    className={`bg-linear-to-r from-primary to-secondary bg-clip-text relative text-base font-medium group-hover:text-pink-800  cursor-pointer ${activeSection === link.id ? " text-transparent" : "text-white"}`}
                   >
                     {link.name}
                     <span
@@ -68,8 +68,8 @@ const Navbar = () => {
               <button
                 onClick={() => setIsOpenMenu(!isOpenMenu)}
                 className="transition-all duration-300 opacity-80 group-hover:opacity-100 p-4"
-                // aria-label="menu"
-                // aria-expanded={isOpenMenu}
+                aria-label="menu"
+                aria-expanded={isOpenMenu}
               >
                 {isOpenMenu ? (
                   <X className="w-6 h-6" />
@@ -82,11 +82,11 @@ const Navbar = () => {
 
           {isOpenMenu ? (
             <div className="px-5">
-              <ul className="md:hidden transition-all duration-300 ">
+              <ul className="md:hidden transition-all duration-300 backdrop-blur-lg">
                 {navLinks.map((link) => (
                   <button
                     key={link._id}
-                    className={`w-full block text-left px-3 py-2 rounded-lg transition-all duration-300 bg-linear-to-r from-primary to-secondary bg-clip-text hover:text-transparent  ${activeSection === link.id ? "text-transparent" : "text-white"}  `}
+                    className={`w-full block text-left px-3 py-2 rounded-lg transition-all duration-300 bg-linear-to-r from-primary to-secondary bg-clip-text hover:text-transparent  cursor-pointer ${activeSection === link.id ? "text-transparent" : "text-white"}  `}
                     onClick={() => {
                       scrollToSection(link.id);
                       setIsOpenMenu(false);
@@ -111,7 +111,7 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-    </div>
+    </section>
   );
 };
 

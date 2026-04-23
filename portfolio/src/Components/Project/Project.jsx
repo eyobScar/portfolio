@@ -8,6 +8,7 @@ const Project = ({
   projectTechs,
   projectLiveURL,
   projectGithubURL,
+  projectCategory,
 }) => {
   return (
     <div className="p-2  max-w-[400px] md:max-w-full">
@@ -21,14 +22,16 @@ const Project = ({
             />
           </div>
           <div className="">
-            <h3 className=" my-2">{projectTitle}</h3>
+            <div className="flex justify-between items-center">
+              <h3 className=" my-2">{projectTitle}</h3>
+              <span className="text-xs border border-primary/50 px-2 py-1 rounded-lg text-secondary">{projectCategory}</span>
+            </div>
             <p className=" opacity-60">{projectDescription}</p>
             <ul className="flex flex-wrap gap-2 mt-4">
               {projectTechs.map((tech, ind) => (
-                <li key={ind} className="relative ">
-                  <div className=" absolute bg-primary inset-0 blur rounded-lg"></div>
-                  <div className="relative bg-black px-2  w-fit rounded-lg">
-                    <span className="text-secondary text-[10px]">{tech}</span>
+                <li key={ind} className=" border border-primary/50 rounded-lg">
+                  <div className=" bg-black px-2  w-fit rounded-lg">
+                    <span className="text-secondary text-xs">{tech}</span>
                   </div>
                 </li>
               ))}
@@ -41,10 +44,14 @@ const Project = ({
                border border-green-500/30 rounded-full
               "
               />
-              <p className="text-sm">Live Preview</p>
+              <a href={projectLiveURL} target="_blank">
+                <p className="text-sm">Live Preview</p>
+              </a>
             </div>
             <div className="flex gap-1 items-center border border-primary/30 rounded-lg p-2 cursor-pointer">
-              <p className="text-sm">Github Code</p>
+              <a href={projectGithubURL} target="_blank">
+                <p className="text-sm">Github Code</p>
+              </a>
             </div>
           </div>
         </div>

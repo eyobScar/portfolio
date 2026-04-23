@@ -10,10 +10,10 @@ const Hero = () => {
   const words = ["Frontend", "Backend", "Fullstack"];
   return (
     <section
-      className="min-h-[700px] pt-30 px-5 max-w-[1300px] mx-auto flex items-center"
+      className="min-h-[700px] pt-30 sm:pt-0 flex items-center"
       id="home"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
         <div className="flex flex-col gap-5 items-start justify-center">
           <FadeIn>
             <div className="">
@@ -30,11 +30,13 @@ const Hero = () => {
               />
             </div>
           </FadeIn>
-          <p className="opacity-60">
-            Turning ideas into full-stack web solutions , I build modern,
-            responsive full-stack web applications that turn ideas into real,
-            scalable digital products.
-          </p>
+          <FadeIn>
+            <p className="opacity-60">
+              Turning ideas into full-stack web solutions , I build modern,
+              responsive full-stack web applications that turn ideas into real,
+              scalable digital products.
+            </p>
+          </FadeIn>
 
           <FadeIn>
             <div className="relative max-w-80 ">
@@ -49,7 +51,7 @@ const Hero = () => {
                 <span className="divide-x divide-x-primary group">
                   <span className="text-primary pr-5">Full-Stack</span>
                   <span className="text-secondary pl-5 ">
-                    Web Developer
+                    Contact Me
                     <ArrowRight className="w-10 h-5 inline transition-all duration-400 group-hover:translate-x-2" />
                   </span>
                 </span>
@@ -57,14 +59,16 @@ const Hero = () => {
             </div>
           </FadeIn>
         </div>
-        <div className="relative rounded-2xl orverflow-hidden aspect-4/5 max-w-[500px] md:max-w-[300px] ml-auto group">
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute overflow-hidden bg-gradient-to-r from-primary/20 via-primary/10 to-primary inset-[-2px] animate-[spin_6s_infinite] rounded-lg"></div>
+        <FadeIn>
+          <div className="relative rounded-2xl orverflow-hidden aspect-4/5 max-w-[500px] md:max-w-[300px] ml-auto group">
+            <div className="absolute inset-0 overflow-hidden rounded-2xl">
+              <div className="absolute overflow-hidden bg-gradient-to-r from-primary/20 via-primary/10 to-primary inset-[-2px] animate-[spin_6s_infinite] rounded-lg"></div>
+            </div>
+            <div className="relative rounded-2xl m-[2px] h-cal(100%-2px) overflow-hidden">
+              <img src={image} alt="" className="rounded-lg" />
+            </div>
           </div>
-          <div className="relative rounded-2xl m-[2px] h-cal(100%-2px) overflow-hidden">
-            <img src={image} alt="" className="rounded-lg" />
-          </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

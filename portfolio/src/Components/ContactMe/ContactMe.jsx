@@ -6,6 +6,10 @@ import { Mail } from "lucide-react";
 import emailjs from "emailjs-com";
 
 const ContactMe = () => {
+  emailjs.init("O14IazXdphuobWLUn");
+  const SERVICE_ID = "service_t0dqbbq";
+  const TEMPLATE_ID = "template_qrcmh3q";
+  const PUBLIC_KEY = "O14IazXdphuobWLUn";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,9 +23,6 @@ const ContactMe = () => {
     });
   };
   const handleSubmit = (e) => {
-    const SERVICE_ID = "service_t0dqbbq";
-    const TEMPLATE_ID = "template_qrcmh3q";
-    const PUBLIC_KEY = "O14IazXdphuobWLUn";
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus({
@@ -78,7 +79,7 @@ const ContactMe = () => {
   //   console.log(formData, status);
   // }, [formData, status]);
   return (
-    <section className="max-w-[1300px] mx-auto mt-20 px-5 " id="contact-me">
+    <section className="mt-20 " id="contact-me">
       <div className="flex flex-col gap-3 ">
         <div>
           <div className="flex items-center justify-center gap-2 border border-primary w-fit px-2 py-[2px] rounded-lg bg-primary/10 my-2 mx-auto">
@@ -134,7 +135,7 @@ const ContactMe = () => {
                 <div className="group">
                   <button
                     type="submit"
-                    className="flex justify-center gap-2 border border-primary/30 group-hover:border-primary/50 w-full py-2  rounded-lg group  transition-all duration-300"
+                    className="flex justify-center gap-2 border border-primary/30 group-hover:border-primary/50 w-full py-2  rounded-lg group  transition-all duration-300 cursor-pointer"
                   >
                     <span className=" text-secondary group-hover:[text-shadow:0_0_5px_rgba(82,159,237,0.9)] transition-all duration-300">
                       Send Message
