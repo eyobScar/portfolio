@@ -1,7 +1,7 @@
 import { MapPin, Send } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { SiChatbot, SiGit } from "react-icons/si";
-import { FaLinkedinIn } from "react-icons/fa";
+import { SiChatbot } from "react-icons/si";
+import { FaGithub , FaLinkedin , FaTelegram} from "react-icons/fa";
 import { Mail } from "lucide-react";
 import emailjs from "emailjs-com";
 
@@ -78,7 +78,7 @@ const ContactMe = () => {
     console.log(formData, status);
   }, [formData, status]);
   return (
-    <div className="max-w-[1300px] mx-auto mt-20 px-5">
+    <section className="max-w-[1300px] mx-auto mt-20 px-5 " id="contact-me">
       <div className="flex flex-col gap-3 ">
         <div>
           <div className="flex items-center justify-center gap-2 border border-primary w-fit px-2 py-[2px] rounded-lg bg-primary/10 my-2 mx-auto">
@@ -173,22 +173,28 @@ const ContactMe = () => {
               <div>
                 <p className="opacity-70">You can get me through</p>
                 <div className="flex gap-3">
-                  <a href="https://github.com/eyobScar" target="_blank">
-                    <SiGit className="text-2xl text-primary opacity-70 hover:opacity-100 transition-all duration-300" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/eyobScar"
-                    target="_blank"
-                  >
-                    <FaLinkedinIn className="text-2xl text-primary opacity-70 hover:opacity-100 transition-all duration-300" />
-                  </a>
+                  <div className="p-2 border border-transparent w-fit rounded-lg hover:border hover:border-primary group transition-all duration-300">
+                    <a href="https://github.com/eyobScar" target="_blank">
+                      <FaGithub className="text-2xl  group-hover:text-primary/80 transition-all duration-300" />
+                    </a>
+                  </div>
+                  <div className="p-2 border border-transparent w-fit rounded-lg hover:border hover:border-primary group transition-all duration-300">
+                    <a href="http://www.linkedin.com/in/eyobScar">
+                      <FaLinkedin className="text-2xl  group-hover:text-primary/80 transition-all duration-300" />
+                    </a>
+                  </div>
+                  <div className="p-2 border border-transparent w-fit rounded-lg hover:border hover:border-primary group transition-all duration-300">
+                    <a href="https://t.me/eyob_Scar" target="_blank">
+                      <FaTelegram className="text-2xl  group-hover:text-primary/80 transition-all duration-300" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

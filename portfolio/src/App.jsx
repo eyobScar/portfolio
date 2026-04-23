@@ -5,6 +5,7 @@ import TechStack from "./Components/TechStack/TechStack";
 import About from "./Components/About/About";
 import Projects from "./Components/Projects/Projects";
 import ContactMe from "./Components/ContactMe/ContactMe";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <TechStack />
       <Projects />
       <ContactMe />
+      <Footer />
     </div>
   );
 };
