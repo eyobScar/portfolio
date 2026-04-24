@@ -23,6 +23,7 @@ const Projects = () => {
               projectLiveURL={project.liveURL}
               projectGithubURL={project.githubURL}
               projectCategory={project.category}
+              
             />
           ))}
         </div>

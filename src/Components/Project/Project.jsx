@@ -13,35 +13,37 @@ const Project = ({
   return (
     <div className="p-2  max-w-[400px] md:max-w-full">
       <div className="flex flex-col gap-3 items-center hover:scale-101 transition-all duration-300">
-        <div className=" bg-accent/5 dark:bg-accent rounded-lg p-4">
-          <div className="overflow-hidden">
-            <img
-              src={projectImage}
-              alt=""
-              className="w-full rounded-lg opacity-70 hover:opacity-80 hover:scale-105 transition-all duration-300 "
-            />
-          </div>
-          <div className="">
-            <div className="flex justify-between items-center">
-              <h3 className=" my-2 dark:text-white text-black">
-                {projectTitle}
-              </h3>
-              <span className="text-xs border border-primary/50 px-2 py-1 rounded-lg text-secondary">
-                {projectCategory}
-              </span>
+        <div className=" bg-accent/5 dark:bg-accent rounded-lg p-4 min-h-[550px] flex flex-col justify-between" >
+          <div>
+            <div className="overflow-hidden">
+              <img
+                src={projectImage}
+                alt=""
+                className="w-full rounded-lg opacity-70 hover:opacity-80 hover:scale-105 transition-all duration-300 "
+              />
             </div>
-            <p className=" dark:text-white/60 text-black/60">
-              {projectDescription}
-            </p>
-            <ul className="flex flex-wrap gap-2 mt-4">
-              {projectTechs.map((tech, ind) => (
-                <li key={ind} className=" border border-primary/50 rounded-lg">
-                  <div className=" dark:bg-black px-2  w-fit rounded-lg">
-                    <span className="text-secondary text-xs">{tech}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="">
+              <div className="flex justify-between items-center">
+                <h3 className=" my-2 dark:text-white text-black">
+                  {projectTitle}
+                </h3>
+                <span className="text-xs border border-primary/50 px-2 py-1 rounded-lg text-secondary">
+                  {projectCategory}
+                </span>
+              </div>
+              <p className=" dark:text-white/60 text-black/60">
+                {projectDescription}
+              </p>
+              <ul className="flex flex-wrap gap-2 mt-4">
+                {projectTechs.map((tech, ind) => (
+                  <li key={ind} className=" border border-primary/50 rounded-lg">
+                    <div className=" dark:bg-black px-2  w-fit rounded-lg">
+                      <span className="text-secondary text-xs">{tech}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div className="flex justify-between mt-4">
             <div className="flex gap-1 items-center border border-primary/30 rounded-lg p-2 cursor-pointer">
